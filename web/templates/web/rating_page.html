@@ -1,0 +1,35 @@
+{% extends 'web/base.html'%}
+{% block content %}
+<html>
+<header>
+    <body>
+        <div><h3>Dept:</h3></div>
+        <div><h3>Name:</h3></div>
+        <div><h3>Designation:</h3></div>
+
+        <table style="width:25%">
+            <tr>
+        <th><input type="radio" name="value" value="1">1</th>
+        <th><input type="radio" name="value" value="2">2</th>
+        <th><input type="radio" name="value" value="3">3</th>
+        <th><input type="radio" name="value" value="4">4</th>
+        <th><input type="radio" name="value" value="5">5</th>
+        <th><input type="radio" name="value" value="6">6</th>
+        <th><input type="radio" name="value" value="7">7</th>
+        <th><input type="radio" name="value" value="8">8</th>
+        <th><input type="radio" name="value" value="9">9</th>
+        <th><input type="radio" name="value" value="10">10</th>
+            </tr>
+        </table>
+
+        <h3><div>Remarks</div></h3>
+        <div>
+            <textarea rows="5" cols="50" placeholder="Enter your remarks here..."></textarea>
+        </div>
+
+        <button type="button">Submit</button>
+    </body>
+</header>
+</html>
+
+{% endblock content %}
