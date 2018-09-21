@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+<<<<<<< HEAD
 def home(request):
     return render(request, 'web/home.html')
 
@@ -13,3 +14,6 @@ def departmentlist(request):
 def ratingpage(request):
     return render(request, 'web/rating_page.html')
 >>>>>>> initial-rating-page-views
+=======
+# Create your views here.
+>>>>>>> Initial-Model
