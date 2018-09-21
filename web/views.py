@@ -1,5 +1,5 @@
-from django.shortcuts import render
-
+from django.shortcuts import render,  redirect
+from django.contrib import messages
 
 def home(request):
     return render(request, 'web/home.html')
@@ -13,4 +13,5 @@ def departmentlist(request):
 def ratingpage(request):
     return render(request, 'web/rating_page.html')
 
-
+def register(request):
+    return render(request, 'web/register.html')
