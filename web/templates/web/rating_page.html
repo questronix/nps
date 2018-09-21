@@ -1,35 +1,78 @@
-{% extends 'web/base.html'%}
+{% extends 'web/base.html' %}
 {% block content %}
 <html>
-<header>
+<head>
     <body>
-        <div><h3>Dept:</h3></div>
-        <div><h3>Name:</h3></div>
-        <div><h3>Designation:</h3></div>
+        <table align="center" width="100%" border="1">
+    <th>
+        <h1 align="center">RATING</h1>
+        <table style=width:25% align="center">
 
-        <table style="width:25%">
             <tr>
-        <th><input type="radio" name="value" value="1">1</th>
-        <th><input type="radio" name="value" value="2">2</th>
-        <th><input type="radio" name="value" value="3">3</th>
-        <th><input type="radio" name="value" value="4">4</th>
-        <th><input type="radio" name="value" value="5">5</th>
-        <th><input type="radio" name="value" value="6">6</th>
-        <th><input type="radio" name="value" value="7">7</th>
-        <th><input type="radio" name="value" value="8">8</th>
-        <th><input type="radio" name="value" value="9">9</th>
-        <th><input type="radio" name="value" value="10">10</th>
+                <td><h5>Dept: </h5></td>
             </tr>
+
+            <tr>
+                <td><h5>Name: </h5></td>
+            </tr>
+
+            <tr>
+                <td><h5>Designation: </h5></td>
+            </tr>
+
+            <tr>
+               <td><h5>Department: </h5></td>
+            </tr>
+
+            <tr>
+                <td><h5>Rating Score: </h5></td>
+            </tr>
+
         </table>
 
-        <h3><div>Remarks</div></h3>
-        <div>
-            <textarea rows="5" cols="50" placeholder="Enter your remarks here..."></textarea>
-        </div>
+            <table style="width:25%" align="center">
 
-        <button type="button">Submit</button>
+                <tr>
+                    <td><input type="radio" name="value" value="1"><br>1</td>
+                    <td><input type="radio" name="value" value="2"><br>2</td>
+                    <td><input type="radio" name="value" value="3"><br>3</td>
+                    <td><input type="radio" name="value" value="4"><br>4</td>
+                    <td><input type="radio" name="value" value="5"><br>5</td>
+                    <td><input type="radio" name="value" value="6"><br>6</td>
+                    <td><input type="radio" name="value" value="7"><br>7</td>
+                    <td><input type="radio" name="value" value="8"><br>8</td>
+                    <td><input type="radio" name="value" value="9"><br>9</td>
+                    <td><input type="radio" name="value" value="10"><br>10</td>
+                </tr>
+
+            </table>
+
+            <table align="center" style="width:25%">
+
+                <tr>
+                    <td><h5>Remarks:</h5></td>
+                </tr>
+
+            </table>
+
+                <table align="center">
+
+                <tr>
+                    <td>
+                        <textarea rows="5" cols="50" placeholder="Enter your remarks here..."></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="right">
+                            <button type="button">Submit</button>
+                    </td>
+                </tr>
+
+                </table>
+            </th>
+        </table>
     </body>
-</header>
+</head>
 </html>
-
 {% endblock content %}

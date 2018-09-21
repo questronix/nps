@@ -13,4 +13,5 @@ def departmentlist(request):
 def ratingpage(request):
     return render(request, 'web/rating_page.html')
 
-
+def clientrequirement(request):
+    return render(request, 'web/client_requirement.html')
