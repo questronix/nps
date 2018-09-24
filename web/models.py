@@ -10,9 +10,12 @@ class Employee(models.Model):
     empid = models.AutoField(primary_key=True)
     address =  models.CharField(max_length=100)
     designation =  models.CharField(max_length=100)
+    code = models.CharField(max_length=50)
+    department = models.CharField(max_length=50)
+    logo = models.ImageField()
 
     def __str__(self):
-        return self.designation
+        return self.department
 
 class Client (models.Model):
     client_name = models.CharField(max_length=30)
@@ -25,16 +28,11 @@ class Client (models.Model):
     client_project = models.CharField(max_length=50)
     client_address = models.CharField(max_length=100)
 
-class Deptmaster(Employee):
-    code = models.CharField(max_length=50)
-    description = models.CharField(max_length=50)
-    logo = models.ImageField()
-
-class Emp_rate(Deptmaster):
+class Emp_rate(models.Model):
     emp_score = models.IntegerField()
 
-class Dept_rate(Deptmaster):
+class Dept_rate(models.Model):
     dept_score = models.IntegerField()
 
-class Client_rate(Deptmaster):
+class Client_rate(models.Model):
     client_score = models.IntegerField()
