@@ -53,11 +53,6 @@
                             <span class="hidden-xs">Profile</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="{% url 'logout' %}" class="dropdown-toggle" role="button">
-                            <span class="hidden-xs">Logout</span>
-                        </a>
-                    </li>
                     {% else %}
                     <li>
                         <a href="{% url 'login' %}" class="dropdown-toggle" role="button">
@@ -85,6 +80,9 @@
                 <li><a href="{% url 'web-dep' %}"><i class="fa fa-circle-o text-red"></i> <span>Department</span></a>
                 </li>
                 <li><a href="{% url 'web-rp' %}"><i class="fa fa-circle-o text-yellow"></i> <span>Rating</span></a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}"><i class="fa fa-circle-o text-blue"></i> <span>Logout</span></a></li>
+                {% endif %}
             </ul>
         </section>
         <!-- /.sidebar -->
@@ -94,14 +92,14 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             {% if messages %}
-                {% for message in messages %}
-                    <div class="alert alert-success alert alert-{{ message.tags }}">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
-                        </button>
-                        <h4><i class="icon fa fa-check"></i> Alert!</h4>
-                        {{ message }}
-                    </div>
-                {% endfor %}
+            {% for message in messages %}
+            <div class="alert alert-success alert alert-{{ message.tags }}">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                </button>
+                <h4><i class="icon fa fa-check"></i> Alert!</h4>
+                {{ message }}
+            </div>
+            {% endfor %}
             {% endif %}
             <h1>
                 Dashboard
@@ -168,6 +166,7 @@
 <script src="{% static 'bower_components/jquery-ui/jquery-ui.min.js' %}"></script>
 <script>
   $.widget.bridge('uibutton', $.ui.button);
+
 
 
 
