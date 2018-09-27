@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'employee.apps.EmployeeConfig',
     'web.apps.WebConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -122,3 +123,6 @@ STATICFILES_DIRS = (
 )
 
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = 'web-home'
+LOGIN_URL = 'login'

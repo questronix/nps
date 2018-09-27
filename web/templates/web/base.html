@@ -17,6 +17,7 @@
           href="{% static 'bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css' %}">
     <link rel="stylesheet" href="{% static 'bower_components/bootstrap-daterangepicker/daterangepicker.css' %}">
     <link rel="stylesheet" href="{% static 'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/iCheck/square/blue.css' %}">
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -46,17 +47,29 @@
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-                    <!-- Tasks: style can be found in dropdown.less -->
+                    {% if user.is_authenticated %}
                     <li>
-                        <a href="{% url 'web-login' %}" class="dropdown-toggle" role="button">
+                        <a href="{% url 'profile' %}" class="dropdown-toggle" role="button">
+                            <span class="hidden-xs">Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout' %}" class="dropdown-toggle" role="button">
+                            <span class="hidden-xs">Logout</span>
+                        </a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'login' %}" class="dropdown-toggle" role="button">
                             <span class="hidden-xs">Login</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{% url 'web-register' %}" class="dropdown-toggle" role="button">
+                        <a href="{% url 'emp_reg' %}" class="dropdown-toggle" role="button">
                             <span class="hidden-xs">Register</span>
                         </a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -72,7 +85,6 @@
                 <li><a href="{% url 'web-dep' %}"><i class="fa fa-circle-o text-red"></i> <span>Department</span></a>
                 </li>
                 <li><a href="{% url 'web-rp' %}"><i class="fa fa-circle-o text-yellow"></i> <span>Rating</span></a></li>
-                <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Logout</span></a></li>
             </ul>
         </section>
         <!-- /.sidebar -->
@@ -81,6 +93,16 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success alert alert-{{ message.tags }}">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                        </button>
+                        <h4><i class="icon fa fa-check"></i> Alert!</h4>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
             <h1>
                 Dashboard
             </h1>
@@ -105,6 +127,8 @@
                                     {% endblock department %}
                                     {% block home %}
                                     {% endblock home %}
+                                    {% block profile %}
+                                    {% endblock profile %}
                                     <!-- Table Content Insert here -->
                                     <div>
                                         <p class="text-center">
@@ -145,6 +169,12 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 
+
+
+
+
+
+
 </script>
 <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'bower_components/raphael/raphael.min.js' %}"></script>
@@ -162,5 +192,6 @@
 <script src="{% static 'dist/js/adminlte.min.js' %}"></script>
 <script src="{% static 'dist/js/pages/dashboard.js' %}"></script>
 <script src="{% static 'dist/js/demo.js' %}"></script>
+<script src="{% static 'plugins/iCheck/icheck.min.js' %}"></script>
 </body>
 </html>

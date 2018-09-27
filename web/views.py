@@ -15,6 +15,3 @@ def ratingpage(request):
 
 def clientrequirement(request):
     return render(request, 'web/client_requirement.html')
-
-def register(request):
-    return render(request, 'web/register.html')
