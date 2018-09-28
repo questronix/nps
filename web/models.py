@@ -10,9 +10,34 @@ class Employee(models.Model):
     empid = models.AutoField(primary_key=True)
     address = models.CharField(max_length=100)
     designation = models.CharField(max_length=100)
+<<<<<<< HEAD
     code = models.CharField(max_length=50)
+=======
+>>>>>>> Update_UI
     department = models.CharField(max_length=50)
-    logo = models.ImageField()
+    logo = models.ImageField(default='default.jpg', upload_to='profile_pics')
 
     def __str__(self):
+<<<<<<< HEAD
         return self.department
+=======
+        return self.designation
+
+class Ratings(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    middle_name = models.CharField(max_length=30)
+    designation = models.CharField(max_length=100)
+    department = models.CharField(max_length=50)
+    rate = models.IntegerField()
+    pass
+
+class Client(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    middle_name = models.CharField(max_length=30)
+    designation = models.CharField(max_length=100)
+    department = models.CharField(max_length=50)
+    rate = models.IntegerField()
+    pass
+>>>>>>> Update_UI
