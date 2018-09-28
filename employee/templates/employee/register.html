@@ -1,0 +1,39 @@
+{% extends "web/base_reg.html" %}
+{% block reg %}
+<form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <div class="form-group has-feedback">
+            <label for="id_username">FULLNAME:</label>
+            <input type="text" class="form-control" name="username" required id="id_username">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            <label for="id_username">EMAIL:</label>
+            <input type="email" class="form-control" placeholder="Email" name="email" required id="id_email">
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            <label for="id_username">PASSWORD:</label>
+            <input type="password" class="form-control" placeholder="Password" name="password1" required
+                   id="id_password1">
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            <label for="id_username">PASSWORD CONFIRMATION:</label>
+            <input type="password" class="form-control" placeholder="Retype password" name="password2" required
+                   id="id_password2">
+            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+        </div>
+        <!-- /.col -->
+    </fieldset>
+    <!-- /.col -->
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block btn-flat">Submit</button>
+    </div>
+</form>
+
+<div class="social-auth-links text-center">
+    <a href="#" class="text-center">I already have a membership</a>
+</div>
+{% endblock reg %}
